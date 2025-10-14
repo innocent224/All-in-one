@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Tasks, Notes and Weather in one beautiful local-first app" />
+  <link rel="stylesheet" href="/CSS/index.css">
+  <title>All-in-One: Tasks • Notes • Weather</title>
+</head>
+<body>
+  <div class="glow-wrap" aria-hidden="true">
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+    <div class="glow g3"></div>
+    <div class="glow g4"></div>
+  </div>
+
+  <div class="app" role="application">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">A</div>
+        <div>
+          <h1>All-in-One</h1>
+          <div class="small">Tasks • Notes • Weather</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Main navigation">
+        <button id="btn-tasks" class="active">📋 Tasks</button>
+        <button id="btn-notes">🗒️ Notes</button>
+        <button id="btn-weather">☀️ Weather</button>
+      </nav>
+
+      <div class="stats">
+        <div class="stat card">
+          <h3>Open</h3>
+          <p id="stat-open">0</p>
+        </div>
+        <div class="stat card">
+          <h3>Notes</h3>
+          <p id="stat-notes">0</p>
+        </div>
+      </div>
+
+      <div style="margin-top:14px" class="card small">
+        <strong>Tips</strong>
+        <ul style="padding-left:16px;margin:8px 0 0">
+          <li>Data stored locally (localStorage)</li>
+          <li>Weather needs OpenWeatherMap API key</li>
+          <li>Allow location for automatic weather</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="header">
+        <div style="display:flex;flex-direction:column">
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="chip">All-in-One</div>
+            <div id="status" class="small">Ready</div>
+          </div>
+          <div class="small" id="date"></div>
+        </div>
+        <div class="toolbar">
+          <div class="clock" id="clock">--:--</div>
+          <button id="btn-refresh" class="icon-btn" title="Refresh data">🔄</button>
+        </div>
+      </div>
+
+      <!-- TASKS VIEW -->
+      <section id="view-tasks" class="view active">
+        <div class="card">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <strong>Tasks</strong>
+            <div class="small">Manage your to‑dos</div>
+          </div>
+
+          <div class="task-form">
+            <input id="task-input" placeholder="Add a task — press Add or Enter" />
+            <button id="add-task" class="btn">Add</button>
+          </div>
+
+          <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+            <label class="small">Filter</label>
+            <select id="filter" style="background:transparent;border:0;color:inherit;padding:8px;border-radius:8px">
+              <option value="all">All</option>
+              <option value="open">Open</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+
+          <div class="tasks" id="tasks-list"></div>
+        </div>
+      </section>
+
+      <!-- NOTES VIEW -->
+      <section id="view-notes" class="view">
+        <div class="card">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <strong>Notes</strong>
+            <div style="display:flex;gap:8px">
+              <input id="note-search" placeholder="Search notes" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit" />
+              <button id="new-note" class="btn">New note</button>
+            </div>
+          </div>
+
+          <div class="notes-grid" id="notes-grid"></div>
+        </div>
+      </section>
+
+      <!-- WEATHER VIEW -->
+      <section id="view-weather" class="view">
+        <div class="card">
+          <div class="weather-row">
+            <div style="flex:1;min-width:260px">
+              <div style="display:flex;gap:8px;align-items:center">
+                <input id="city-input" placeholder="Enter city (or leave blank to use location)" style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit" />
+                <button id="btn-geo" class="icon-btn" title="Detect location">🌐</button>
+                <button id="btn-get-weather" class="btn">Get</button>
+              </div>
+              <div class="small" style="margin-top:8px">Tip: we auto-detect your location when you open the Weather tab.</div>
+            </div>
+
+            <div class="weather-card card" style="text-align:right">
+              <div class="small">Current</div>
+              <div id="weather-snapshot">—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" id="weather-details">Search a city or allow location to see details.</div>
+      </section>
+
+      <div class="footer">
+        <div>Made with ❤️ • Local-first</div>
+        <div class="small">Tip: Add your OpenWeatherMap API key in the script</div>
+      </div>
+    </main>
+  </div>
+
+    <script src="/JS/index.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/CSS/index.css">
+  <title>All-in-One: Tasks • Notes • Weather</title>
+</head>
+<body>
+  <div class="glow-wrap" aria-hidden="true">
+    <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div><div class="glow g4"></div>
+  </div>
+
+  <div class="app" role="application">
+    <aside class="sidebar">
+      <div class="logo"><div class="mark">A</div><div><h1>All-in-One</h1><div class="muted">Tasks • Notes • Weather</div></div></div>
+      <nav class="nav" aria-label="Main navigation">
+        <button id="btn-tasks" class="active">📋 Tasks</button>
+        <button id="btn-notes">🗒️ Notes</button>
+        <button id="btn-weather">☀️ Weather</button>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="header"><h2 id="main-title">Tasks</h2></div>
+      <section id="view-tasks"><div class="card"><input id="task-input" placeholder="Add task"/><button id="add-task">Add</button><ul id="tasks-list"></ul></div></section>
+      <section id="view-notes" style="display:none"><div class="card"><input id="note-title" placeholder="Note title"/><textarea id="note-body" placeholder="Write a note"></textarea><button id="save-note">Save</button><div id="notes-list"></div></div></section>
+      <section id="view-weather" style="display:none"><div class="card"><input id="city" placeholder="Enter city"/><button id="get-weather">Get Weather</button><div id="weather-result"></div></div></section>
+    </main>
+  </div>
+
+  <script src="/JS/index.js"></script>
+</body>
+</html> -->
